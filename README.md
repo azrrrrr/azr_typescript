@@ -10,6 +10,7 @@
 * [非官方中文版](https://zhongsp.gitbooks.io/typescript-handbook/content/)
 * [TypeScript 入门教程](https://ts.xcatliu.com/)
 * [从 JavaScript 到 TypeScript](https://tasaid.com/Blog/20171011231943.html?sgs=sf)
+* [The Definitive TypeScript Guide](https://www.sitepen.com/blog/2018/10/29/update-the-definitive-typescript-guide/)
 
 ## TypeScript
 
