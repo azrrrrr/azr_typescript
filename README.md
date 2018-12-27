@@ -1,4 +1,4 @@
-#JaveScript的超集--TypeScript
+# JaveScript的超集--TypeScript
 
 
 
