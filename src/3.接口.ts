@@ -109,64 +109,63 @@ class XiaoHong implements PersonInterFace{
 
 /*
 * 继承接口
-* */
-
-// 从一个复制到另一个
-interface Shape {
-    color: string;
+* 1. 接口继承接口
+*   1.1 单接口继承
+*   2.3 多接口继承
+* 2. 接口继承类
+*/
+interface TwoDPoint{
+    x: number,
+    y: number
 }
 
-interface Square extends Shape {
-    sideLength: number;
+interface ThreeDPoint{
+    z: number
 }
 
-let square = <Square>{};
-square.color = "blue";
-square.sideLength = 10;
+// 单接口继承
+// interface ThreeDPoint extends TwoDPoint{
+//     z: number
+// }
+// 单接口继承
+// let p1: ThreeDPoint= {
+//     z: 100,
+//     x: 100,
+//     y: 100
+// }
 
-// 多个接口
 
-interface Shape {
-    color: string;
+// 多接口继承
+interface FourDPoint extends ThreeDPoint, TwoDPoint{
+    time: Date
+}
+// 多接口继承
+let p2: FourDPoint = {
+    z: 100,
+    x: 100,
+    y: 100,
+    time: new Date()
 }
 
-interface PenStroke {
-    penWidth: number;
+// 接口继承类
+
+
+class Bird{
+    type: string = "画眉鸟"
+    fly():void {
+
+    }
 }
 
-interface Square extends Shape, PenStroke {
-    sideLength: number;
+
+interface Fly extends Bird{
+
 }
 
-let square = <Square>{};
-square.color = "blue";
-square.sideLength = 10;
-square.penWidth = 5.0;
+let flyingBird: Fly = {
+    type: "啄木鸟",
+    fly(): void {
 
-
-/*
-* 接口继承类
-* */
-
-class Control {
-    private state: any;
+    }
 }
 
-interface SelectableControl extends Control {
-    select(): void;
-}
-
-class Button extends Control implements SelectableControl {
-    select() {}
-}
-
-class TextBox extends Control {
-    select() {}
-}
-
-// Error: Property 'state' is missing in type 'Image'.
-class Image implements SelectableControl {
-    select() {}
-}
-
-class Location {}
